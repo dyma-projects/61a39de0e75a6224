@@ -6,8 +6,8 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
   styleUrls: ['./exercice2.component.css']
 })
 export class Exercice2Component implements OnInit {
-  @ViewChild("myinput") public valeur?: ElementRef<HTMLInputElement>;
-
+  @ViewChild("myinput") public el?: ElementRef<HTMLInputElement>;
+  valeur?: string;
   constructor() { }
 
   ngOnInit() {
@@ -15,6 +15,6 @@ export class Exercice2Component implements OnInit {
   }
 
   add(){
-    this.valeur?.nativeElement.value
+    this.valeur = this.el?.nativeElement.value;
   }
 }
